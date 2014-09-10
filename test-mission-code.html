@@ -1,0 +1,251 @@
+<link rel="stylesheet" href="//cdn.jsdelivr.net/normalize/2.1.2/normalize.css" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<style>
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+.hst-freeform {
+height: 100vh;
+overflow: hidden;
+}
+
+#header, .header {
+    display: none;
+}
+
+#container {
+background: #000;
+}
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  font-style: normal;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #000;
+  height: 100%;
+  font-family: raleway, montserrat, sans-serif;
+  color: #999;
+}
+
+body {
+  height: 100%;
+}
+
+.site-nav {
+  font-size: .9rem;
+  line-height: 1;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  z-index: 50;
+}
+@media (max-width: 480px) {
+  .site-nav--toggle {
+    padding-left: 1.5rem;
+  }
+  .site-nav--list {
+    border-top: 1px solid #333;
+  }
+  .site-nav--list li {
+    backface-visibility: hidden;
+    max-height: 0;
+    transition: max-height 200ms;
+    overflow: hidden;
+  }
+  .site-nav--list li a {
+    padding-left: 1.125rem;
+  }
+}
+@media (min-width: 480px) {
+  .site-nav {
+    display: block;
+    position: absolute;
+    width: 20%;
+    top: 0;
+    left: 0;
+  }
+  .site-nav--list {
+    display: block;
+  }
+}
+.site-nav ul, .site-nav li {
+  padding: 0;
+  margin: 0;
+  text-indent: 0;
+  list-style-type: none;
+}
+.site-nav a, .site-nav button {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: left;
+  padding: .75em  1.5em .75em 0;
+  white-space: nowrap;
+  border-width: 0;
+  background: transparent;
+  color: #aaa;
+  margin: 0;
+  outline: 0;
+}
+.site-nav a:link, .site-nav a:visited, .site-nav button:link, .site-nav button:visited {
+  color: #aaa;
+}
+.site-nav a:hover, .site-nav button:hover {
+  color: #000;
+  background: cyan;
+}
+.site-nav i {
+  display: inline-block;
+  width: 2.2rem;
+  font-size: 1.25em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.wrapper {
+  background: #fff;
+  position: relative;
+  z-index: 10;
+  transition: margin 200ms;
+  min-height: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+@media (min-width: 481px) {
+  .wrapper {
+    margin-left: 2.2rem;
+    z-index: 100;
+  }
+}
+
+.site-header {
+  padding: .63rem 1.5rem;
+  background: #222;
+  color: #888;
+  overflow: hidden;
+}
+.site-header h1 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1em;
+  float: left;
+}
+.site-header--current {
+  color: #fff;
+}
+.site-header .account {
+  color: cyan;
+  display: inline-block;
+  padding: 0 1em;
+}
+.site-header .account i {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  background: white;
+  text-align: center;
+  border-radius: 50%;
+  vertical-align: top;
+  margin: 0 0 0 .3em;
+}
+@media (min-width: 400px) {
+  .site-header .account {
+    float: right;
+    padding: 0;
+  }
+}
+
+.workspace {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  height: 100vh;
+  overflow: auto;
+}
+
+@media (max-width: 480px) {
+  .body__expanded .site-nav--list li {
+    max-height: 2.15rem;
+  }
+}
+@media (min-width: 481px) {
+  .body__expanded .wrapper {
+    margin-left: 160px;
+    z-index: 100;
+  }
+}
+
+.small-only {
+  display: none;
+}
+@media (max-width: 370px) {
+  .small-only {
+    display: block;
+  }
+}
+.hc_sitefooter {
+display: none;
+}
+
+</style>
+
+<body>
+  <nav id="site-nav" class="site-nav" role='navigation'>
+    <ul class="site-nav--list">
+      <li style="margin-top: 44px;"><a href="#"><i class="entypo-gauge"></i>Dashboard</a></li>
+      <li><a href="#"><i class="entypo-download"></i>Work Queue</a></li>
+      <li><a href="#"><i class="entypo-picture"></i>Asset Mgmt</a></li>
+      <li><a href="#"><i class="entypo-doc-text"></i>Reports</a></li>
+      <li><a href="#"><i class="entypo-chart-bar"></i>Admin</a></li>
+      <li><a href="#"><i class="entypo-user"></i>Your Profile</a></li>
+      <li><a href="#"><i class="entypo-logout"></i>Logout</a></li>
+      <li><a href="#"><i class="entypo-lifebuoy"></i>Help</a></li>
+    </ul>
+  </nav>
+  <div class="wrapper">
+    <header class="site-header">
+
+      <h1>Generico | <span class="site-header--current">Dashboard</span></h1>
+      <aside class="account">GabeN <i class="entypo-user"></i></aside>
+    </header>
+    <section class="workspace">
+
+      <div id="site-nav--toggle1" class="site-nav--toggle no-cyan"><a href="#"><i class="entypo-menu">DISCOVER</i></a></div>
+
+
+      <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?layer=c&amp;panoid=z9CNJTm9xBAAAAQfCVi0rg&amp;ie=UTF8&amp;source=embed&amp;output=svembed&amp;cbp=13%2C50.072400000000016%2C%2C0%2C0"></iframe><div><small><a href="https://www.google.com/maps/views/" style="color:#0000FF; text-align:left">Views</a>: <a href="https://www.google.com/maps/views/view/114699877098793477247/gphoto/6050175161771453538" style="color:#0000FF; text-align:left">San Francisco, CA</a> by <a href="https://www.google.com/maps/views/profile/114699877098793477247" style="color:#0000FF; text-align:left">Micheal Grant</a></small></div>
+<<<<<<< HEAD
+    
+=======
+
+      <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?layer=c&amp;panoid=z9CNJTm9xBAAAAQfCVi0rg&amp;ie=UTF8&amp;source=embed&amp;output=svembed&amp;cbp=13%2C50.072400000000016%2C%2C0%2C0"></iframe><div><small><a href="https://www.google.com/maps/views/" style="color:#0000FF; text-align:left">Views</a>: <a href="https://www.google.com/maps/views/view/114699877098793477247/gphoto/6050175161771453538" style="color:#0000FF; text-align:left">San Francisco, CA</a> by <a href="https://www.google.com/maps/views/profile/114699877098793477247" style="color:#0000FF; text-align:left">Micheal Grant</a></small></div>      
+>>>>>>> f66400e... Master Copy
+
+    </section>
+  </div>
+</body>
+
+<script>
+$('#site-nav--toggle').click(function(){
+  // toggle a class on body to affect nav and workarea behaviour
+  $('body').toggleClass('body__expanded');
+});
+
+$('#site-nav--toggle1').click(function(){
+  // toggle a class on body to affect nav and workarea behaviour
+  $('body').toggleClass('body__expanded');
+});
+
+$(window).resize(function() {
+  $('body').removeClass('body__expanded');
+});
+</script>
